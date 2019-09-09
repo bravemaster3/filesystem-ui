@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
 #RUN apt-get update && apt-get install -y \
 #    libmpfr-dev
 RUN apt-get update && apt-get install -y \
-	libgdal1-dev\
+	libgdal-dev\
 	libgeos-dev\
 	libproj-dev
 
