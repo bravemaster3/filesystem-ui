@@ -14,15 +14,19 @@ RUN apt-get update && apt-get install -y \
     libssh2-1-dev \
     libssl1.0.0
 
-# system library dependency for the euler app
+# system library dependency for the filesystem-ui app
 #RUN apt-get update && apt-get install -y \
 #    libmpfr-dev
+#RUN apt-get update && apt-get install -y \
+	libgdal1-dev\
+	libgeos-dev\
+	libproj-dev
 
 # basic shiny functionality
 RUN R -e "install.packages(c('shiny', 'rmarkdown'), repos='https://cloud.r-project.org/')"
 
-# install dependencies of the euler app
-RUN R -e "install.packages(c('shinyjs', 'shinyTime', 'leaflet', 'dplyr', 'plyr', 'tidyr', 'stringr', 'sf', 'zoo', 'data.table', 'DT', 'leaflet.extras', 'rgdal', 'raster', 'sp'), repos='https://cloud.r-project.org/')"
+# install dependencies of the filesystem-ui app
+RUN R -e "install.packages(c('Rcpp', 'units', 'shinyjs', 'shinyTime', 'leaflet', 'dplyr', 'plyr', 'tidyr', 'stringr', 'sf', 'zoo', 'data.table', 'DT', 'leaflet.extras', 'sp', 'rgdal', 'raster'), repos='https://cloud.r-project.org/')"
 
 # copy the app to the image
 RUN mkdir /root/filesystem-ui
