@@ -26,7 +26,7 @@ RUN R -e "install.packages(c('shinyjs', 'shinyTime', 'leaflet', 'dplyr', 'plyr',
 
 # copy the app to the image
 RUN mkdir /root/filesystem-ui
-COPY euler /root/filesystem-ui
+COPY filesystem-ui /root/filesystem-ui
 
 COPY Rprofile.site /usr/lib/R/etc/
 
