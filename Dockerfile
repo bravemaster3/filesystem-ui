@@ -31,7 +31,7 @@ RUN R -e "install.packages(c('Rcpp', 'units', 'shinyjs', 'shinyTime', 'leaflet',
 
 # copy the app to the image
 RUN mkdir /root/filesystem-ui
-COPY filesystem-ui /root/filesystem-ui
+COPY filesystem-ui/ /root/filesystem-ui
 
 COPY Rprofile.site /usr/lib/R/etc/
 
